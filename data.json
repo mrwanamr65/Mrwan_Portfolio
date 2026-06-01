@@ -103,9 +103,8 @@
       "images": [
         "images/digitopia1.jpg",
         "images/digitopia2.jpeg",
-        "images/digitopia3.jpeg",
-        "images/digitopia1.jpeg"
-      ]
+        "images/digitopia3.jpeg"
+    ]
     },
     {
       "title": "NASA Space Apps Challenge",
@@ -127,7 +126,7 @@
       "description": "Completed an intensive engineering bootcamp managed by El Mentor and supervised by Dr. Mahmoud Derar. Engineered a functional software application linked directly with a structured business model MVP in an intense 5-day cycle, defending the presentation directly before an expert evaluation jury.",
       "images": [
         "images/decil1_1.jpg",
-        "images/decil1_2.jpg"
+        "images/decil1_2.png"
       ]
     }
   ],
