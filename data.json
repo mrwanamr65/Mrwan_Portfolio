@@ -11,23 +11,23 @@
     }
   },
   "skills": {
-    "ai_deep_learning": {
+"ai_deep_learning": {
       "title": "Deep Learning & AI Foundations",
-      "description": "Advanced understanding of neural network mechanics, specializing in building architectures from scratch and hyperparameter optimization based on intensive research and curriculum paths.",
+      "description": "Advanced theoretical and practical comprehension of neural network mechanics, specialized in implementing state-of-the-art deep architectures from scratch, hyperparameter tuning, and developing optimized training pipelines based on rigorous research tracks.",
       "items": [
-        "Core Architectures: Hands-on implementation of ConvNeXt, EfficientNet, CoAtNet, MobileNet, and Vision Transformers (ViT).",
-        "Deep Learning Mechanics: Multi-head attention mechanisms, patch embedding, feature extraction pipelines, and building neural networks from scratch.",
-        "Frameworks & Libraries: Highly proficient in PyTorch, TensorFlow, Keras, Scikit-learn, and MediaPipe.",
-        "Training Loops: Expert in writing custom training loops, managing batch processing, backpropagation, and loss optimization algorithms (Adam, SGD)."
+        "State-of-the-Art Core Architectures: Advanced implementation, evaluation, and fine-tuning of deep convolutional and transformer models, including ConvNeXt, EfficientNet variants, hybrid CoAtNet, MobileNet, and Vision Transformers (ViT).",
+        "Transformer & Network Mechanics: Hands-on building of multi-head self-attention mechanisms, patch embedding/projection layers, positional encodings, feature extraction pipelines, and building deep neural network architectures entirely from scratch.",
+        "Robust Framework Ecosystem: High proficiency in end-to-end model development, tensor manipulation, and deployment utilizing PyTorch, TensorFlow, Keras, Scikit-learn, and MediaPipe.",
+        "Custom Training & Optimization Pipelines: Writing manual training loops, managing low-level batch processing, supervising backpropagation, and configuring advanced loss optimization algorithms (Adam, SGD with momentum) along with regularization techniques."
       ]
     },
     "computer_vision": {
       "title": "Computer Vision & Real-time Inference",
-      "description": "Processing dynamic visual inputs and deploying state-of-the-art models for real-time tracking, object classification, and spatial awareness.",
+      "description": "Engineering high-performance pipelines to process dynamic visual inputs, deploying state-of-the-art object recognition models, and implementing multi-object tracking mechanisms for real-time spatial awareness.",
       "items": [
-        "Object Detection: Real-time inference deployment using custom trained YOLO models.",
-        "Live Tracking: Integrating OpenCV pipelines with DeepSort for multi-object tracking and continuous ID logging.",
-        "Data Pipelines: Building custom image preprocessing and advanced data augmentation pipelines using OpenCV."
+        "Custom Object Detection Deployments: Real-time inference deployment and optimization using custom-trained YOLO models, tailoring anchor boxes and learning schedules for highly specialized target environments.",
+        "Multi-Object Tracking & ID Logging: Integrating OpenCV real-time video streaming pipelines with DeepSort tracking algorithms to manage continuous object ID persistence, bounding box filtering, and occlusion handling.",
+        "Advanced Data Augmentation & Preprocessing: Designing high-efficiency image preprocessing pipelines with OpenCV, incorporating spatial transformations, pixel-level augmentations, normalization, and custom geometric resizing to boost model generalization."
       ]
     },
     "web_integration": {
@@ -125,7 +125,7 @@
   "certificates": [
     { "title": "DECI Data Science & AI - Technical Tier Level 3", "date": "Current Enrollment", "link": "#" },
     { "title": "DECI Data Science & AI Track - Level 2 Completion", "date": "Sept 2025", "link": "#" },
-    { "title": "DECI Coding Challenge Project Winner (Cohort 3 Level 1)", "date": "Jan 2025", "link": "#" },
+    { "title": "DECI Coding Challenge Project Winner (Cohort 3 Level 2)", "date": "Jan 2025", "link": "#" },
     { "title": "Digital Egypt Cubs Initiative (DECI) - Level 1 Completion", "date": "Oct 2024", "link": "#" },
     { "title": "Elements of AI Certification", "date": "Sept 2024", "link": "#" },
     { "title": "Data Science & Machine Learning Specialist Certificate (Edraak)", "date": "June 2024", "link": "#" },

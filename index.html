@@ -3,529 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mrwan Amr Mohamed | Portfolio</title>
+    <title>Mrwan Amr Mohamed | AI Portfolio</title>
     
-    <!-- Modern Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Professional Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* === SYSTEM DESIGN SYSTEM === */
-        :root {
-            --bg-dark: #07090e;
-            --bg-surface: rgba(13, 17, 26, 0.65);
-            --border-glass: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.18);
-            --text-primary: #f0f3f6;
-            --text-secondary: #8b949e;
-            --accent-glow: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.04), transparent 40%);
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* === MODERN NAVIGATION === */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 6%;
-            background: rgba(7, 9, 14, 0.75);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-glass);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-        }
-
-        nav a:hover {
-            color: var(--text-primary);
-        }
-
-        /* === LAYOUT ARCHITECTURE === */
-        section {
-            padding: 140px 8% 80px;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            font-size: 15px;
-            color: var(--text-secondary);
-            margin-bottom: 50px;
-            max-width: 600px;
-        }
-
-        /* === HERO HERO SECTOR === */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 0;
-        }
-
-        .hero-badge {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-glass);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 12px;
-            width: fit-content;
-            margin-bottom: 25px;
-            color: var(--text-secondary);
-        }
-
-        #hero h1 {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-        }
-
-        #hero p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            background: var(--text-primary);
-            color: var(--bg-dark);
-            padding: 14px 30px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: var(--transition-smooth);
-            border: 1px solid transparent;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--text-primary);
-            border-color: var(--text-primary);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-glass);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.03);
-            border-color: var(--border-hover);
-        }
-
-        /* === DYNAMIC DETAILED SKILLS GRID === */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-        }
-
-        .skill-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-        }
-
-        .skill-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-        }
-
-        .skill-details-list {
-            list-style: none;
-        }
-
-        .skill-details-list li {
-            font-size: 14px;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .skill-details-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--text-secondary);
-        }
-
-        /* === CINEMATIC COMPETITIONS TIMELINE === */
-        .competition-container {
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-        }
-
-        .comp-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            padding: 40px;
-            border-radius: 32px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            position: relative;
-        }
-
-        .comp-info h3 {
-            font-size: 28px;
-            margin-bottom: 5px;
-        }
-
-        .comp-meta {
-            display: flex;
-            gap: 15px;
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        .comp-meta span {
-            background: rgba(255,255,255,0.04);
-            padding: 4px 12px;
-            border-radius: 6px;
-            border: 1px solid var(--border-glass);
-        }
-
-        .comp-desc {
-            color: var(--text-secondary);
-            font-size: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* Cinematic Dynamic Open-Ended Gallery */
-        .comp-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-            width: 100%;
-        }
-
-        .gallery-img-wrapper {
-            aspect-ratio: 4/3;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-glass);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .gallery-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-smooth);
-            filter: grayscale(20%);
-        }
-
-        .gallery-img-wrapper:hover img {
-            transform: scale(1.08);
-            filter: grayscale(0%);
-        }
-
-        /* === PROJECTS & GITHUB FOCUS === */
-        .github-hero-card {
-            background: radial-gradient(circle at top right, rgba(255,255,255,0.03), transparent), var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: 24px;
-            padding: 50px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            backdrop-filter: blur(20px);
-        }
-
-        .github-hero-card i {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            padding: 30px;
-            border-radius: 16px;
-            transition: var(--transition-smooth);
-        }
-
-        .project-card:hover {
-            border-color: var(--border-hover);
-        }
-
-        /* === CERTIFICATES & DYNAMIC ACADEMICS === */
-        .education-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .cert-list, .yt-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .cert-item, .yt-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border-glass);
-            padding: 18px 24px;
-            border-radius: 14px;
-            transition: var(--transition-smooth);
-        }
-
-        .cert-item:hover, .yt-item:hover {
-            background: rgba(255,255,255,0.04);
-            border-color: var(--border-hover);
-        }
-
-        .cert-title-container, .yt-title-container {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .cert-link-btn, .yt-link-btn {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            border-bottom: 1px solid var(--text-secondary);
-            transition: var(--transition-smooth);
-        }
-
-        .cert-link-btn:hover, .yt-link-btn:hover {
-            border-color: var(--text-primary);
-        }
-
-        /* === CINEMATIC LIGHTBOX MODAL === */
-        .lightbox-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(4, 5, 9, 0.95);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox-modal.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .lightbox-content {
-            max-width: 85%;
-            max-height: 80vh;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: var(--text-secondary);
-            font-size: 30px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .lightbox-close:hover {
-            color: var(--text-primary);
-        }
-
-        /* === RESPONSIVE CONSTRAINTS === */
-        @media (max-width: 992px) {
-            .comp-row, .education-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header { padding: 20px 4%; }
-            nav { display: none; } /* Mobile menus can be scaled up later */
-            #hero h1 { font-size: 42px; }
-            section { padding: 100px 4% 60px; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVIGATION HEADER -->
     <header>
-        <div class="logo">Mrwan Amr</div>
+        <div class="logo"><i class="fa-solid fa-circle-nodes"></i> Mrwan Amr</div>
         <nav>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#skills">Skills Profile</a></li>
-                <li><a href="#competitions">Competitions</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#hero"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-cubes"></i> Matrix</a></li>
+                <li><a href="#competitions"><i class="fa-solid fa-trophy"></i> Challenges</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-terminal"></i> Repos</a></li>
+                <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Academy</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- HERO RECRUITMENT -->
     <section id="hero">
-        <div class="hero-badge" id="hero-badge-title">Grade 11 Scientific-Mathematics Student</div>
-        <h1 id="hero-name">Loading Profile...</h1>
+        <div class="hero-badge" id="hero-badge-title">
+            <i class="fa-solid fa-atom fa-spin" style="color: var(--neon-cyan);"></i> Loading...
+        </div>
+        <h1 id="hero-name">Loading...</h1>
         <p id="hero-summary">Architecting systemic pipelines across data science structures and hardware engineering interfaces.</p>
         <div class="btn-group">
-            <a href="#competitions" class="btn">Explore Experience</a>
-            <a href="#projects" class="btn btn-secondary">Open Projects</a>
+            <a href="#competitions" class="btn"><i class="fa-solid fa-arrow-trend-up"></i> Explore Challenges</a>
+            <a href="#projects" class="btn btn-secondary"><i class="fa-brands fa-git-alt"></i> View Tree</a>
         </div>
     </section>
 
-    <!-- DETAILED TECHNICAL MATRIX -->
     <section id="skills">
-        <h2 class="section-title">Technical Matrix</h2>
+        <h2 class="section-title"><i class="fa-solid fa-brain"></i> Technical Matrix</h2>
         <p class="section-subtitle">Deep customization across machine learning pipelines and structural data analytics framework execution.</p>
         <div class="skills-grid" id="dynamic-skills"></div>
     </section>
 
-    <!-- CINEMATIC COMPETITIONS -->
     <section id="competitions">
-        <h2 class="section-title">Elite Innovations & Challenges</h2>
+        <h2 class="section-title"><i class="fa-solid fa-medal"></i> Elite Innovations & Challenges</h2>
         <p class="section-subtitle">A chronological documentation of global and national scale ecosystem hackathons and research validation.</p>
         <div class="competition-container" id="dynamic-competitions"></div>
     </section>
 
-    <!-- PROJECTS CORNER -->
     <section id="projects">
-        <h2 class="section-title">Open Source Deployments</h2>
+        <h2 class="section-title"><i class="fa-solid fa-folder-tree"></i> Open Source Deployments</h2>
         <p class="section-subtitle">Direct endpoints to active development repositories and localized software codebases.</p>
         
         <div class="github-hero-card">
-            <i class="fa-brands fa-github"></i>
-            <h3>Primary Version Control Terminal</h3>
-            <p style="color: var(--text-secondary); margin: 10px 0 25px; font-size: 15px;">Monitor active commit trees, system repositories, and modular infrastructure deployments directly via GitHub.</p>
-            <a id="main-github-btn" href="#" target="_blank" class="btn">Access GitHub Environment</a>
+            <i class="fa-brands fa-github-alt"></i>
+            <h3>Version Control Core Terminal</h3>
+            <p style="color: var(--text-secondary); margin: 10px 0 25px; font-size: 15px;">Monitor active commit trees, production repositories, and modular infrastructure deployments directly via GitHub.</p>
+            <a id="main-github-btn" href="#" target="_blank" class="btn"><i class="fa-solid fa-code-branch"></i> Access Workspace Environment</a>
         </div>
 
         <div class="projects-grid" id="dynamic-projects"></div>
     </section>
 
-    <!-- EDUCATION & COMPREHENSIVE CERTIFICATIONS -->
     <section id="education">
         <div class="education-grid">
             <div>
-                <h2 class="section-title" style="font-size: 26px;">Validated Certifications</h2>
+                <h2 class="section-title" style="font-size: 26px;"><i class="fa-solid fa-award"></i> Validated Certs</h2>
                 <p class="section-subtitle" style="margin-bottom: 30px;">Direct validation parameters and verified institutional completion timelines.</p>
                 <div class="cert-list" id="dynamic-certs"></div>
             </div>
             <div>
-                <h2 class="section-title" style="font-size: 26px;">Theoretical Frameworks</h2>
+                <h2 class="section-title" style="font-size: 26px;"><i class="fa-solid fa-book-open"></i> Theoretical Tracks</h2>
                 <p class="section-subtitle" style="margin-bottom: 30px;">Comprehensive external engineering syllabus and conceptual research deep dives without standalone certificates.</p>
                 <div class="yt-list" id="dynamic-yt"></div>
             </div>
         </div>
     </section>
 
-    <!-- CINEMATIC LIGHTBOX MODAL -->
     <div class="lightbox-modal" id="lightbox">
         <span class="lightbox-close" id="lightbox-close">&times;</span>
         <img class="lightbox-content" id="lightbox-img" src="" alt="Cinematic View">
     </div>
 
-    <!-- PIPELINE ARCHITECTURE RUNTIME -->
     <script>
-        // Mouse Interactive Effect Layer
+        // Smooth Cursor Ambient Light Core Engine
         document.addEventListener('mousemove', e => {
-            document.querySelectorAll('.skill-card, .comp-row, .github-hero-card').forEach(card => {
+            document.querySelectorAll('.skill-card, .comp-row, .github-hero-card, .project-card').forEach(card => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -535,26 +97,35 @@
             });
         });
 
-        // Dynamic JSON Rendering Architecture Pipeline
+        // Skill-to-Icon Engine Map
+        const skillIcons = {
+            ai_deep_learning: 'fa-microchip',
+            computer_vision: 'fa-eye',
+            web_integration: 'fa-server',
+            embedded_iot: 'fa-gears'
+        };
+
+        // Data Injection Core Pipeline Fetch
         async function runPortfolioPipeline() {
             try {
                 const response = await fetch('data.json');
                 const data = await response.json();
 
-                // Bind Profile Context
+                // Bind Profile Metadata
                 document.getElementById('hero-name').innerText = data.personal.name;
                 document.getElementById('hero-summary').innerText = data.personal.summary;
-                document.getElementById('hero-badge-title').innerText = data.personal.title;
+                document.getElementById('hero-badge-title').innerHTML = `<i class="fa-solid fa-graduation-cap" style="color: var(--neon-cyan);"></i> ${data.personal.title}`;
                 document.getElementById('main-github-btn').href = data.personal.links.github;
 
-                // Render Technical Skills Matrix
+                // Render Technical Matrix
                 const skillsContainer = document.getElementById('dynamic-skills');
                 Object.keys(data.skills).forEach(key => {
                     const block = data.skills[key];
+                    const iconClass = skillIcons[key] || 'fa-code';
                     const card = document.createElement('div');
                     card.className = 'skill-card';
                     card.innerHTML = `
-                        <h3>${block.title}</h3>
+                        <h3><i class="fa-solid ${iconClass}"></i> ${block.title}</h3>
                         <p>${block.description}</p>
                         <ul class="skill-details-list">
                             ${block.items.map(i => `<li>${i}</li>`).join('')}
@@ -563,28 +134,27 @@
                     skillsContainer.appendChild(card);
                 });
 
-                // Render Cinematic Competitions
+                // Render Competitions
                 const compContainer = document.getElementById('dynamic-competitions');
                 data.competitions.forEach(c => {
                     const row = document.createElement('div');
                     row.className = 'comp-row';
-                    // Inline thematic edge gradient control injected directly from context
                     row.style.borderLeft = `4px solid transparent`;
                     row.style.borderImage = `${c.gradient} 1`;
 
                     row.innerHTML = `
                         <div class="comp-info">
-                            <h3>${c.title}</h3>
+                            <h3><i class="fa-solid fa-trophy" style="color: var(--neon-cyan);"></i> ${c.title}</h3>
                             <div class="comp-meta">
-                                <span><i class="fa-solid fa-graduation-cap"></i> ${c.role}</span>
-                                <span><i class="fa-solid fa-calendar"></i> ${c.timeline}</span>
+                                <span><i class="fa-solid fa-shield-halved"></i> ${c.role}</span>
+                                <span><i class="fa-solid fa-clock"></i> ${c.timeline}</span>
                             </div>
-                            <p class="comp-desc"><strong>Project Context [${c.project}]:</strong> ${c.description}</p>
+                            <p class="comp-desc"><strong>Project Tree [${c.project}]:</strong> ${c.description}</p>
                         </div>
                         <div class="comp-gallery">
                             ${c.images.map(img => `
                                 <div class="gallery-img-wrapper" onclick="openCinematicView('${img}')">
-                                    <img src="${img}" alt="${c.title}" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600'">
+                                    <img src="${img}" alt="${c.title}" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400'">
                                 </div>
                             `).join('')}
                         </div>
@@ -592,15 +162,15 @@
                     compContainer.appendChild(row);
                 });
 
-                // Render Open Source Repositories
+                // Render Repositories
                 const projectsContainer = document.getElementById('dynamic-projects');
                 data.projects.forEach(p => {
                     const pCard = document.createElement('div');
                     pCard.className = 'project-card';
                     pCard.innerHTML = `
-                        <h4 style="font-size:18px; margin-bottom:10px;">${p.title}</h4>
-                        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:20px;">${p.description}</p>
-                        <a href="${p.github_link}" target="_blank" class="cert-link-btn">Repository Link <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <h4><i class="fa-solid fa-cube"></i> ${p.title}</h4>
+                        <p style="font-size:13px; color:var(--text-secondary); margin: 10px 0 20px;">${p.description}</p>
+                        <a href="${p.github_link}" target="_blank" class="cert-link-btn">Source Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     `;
                     projectsContainer.appendChild(pCard);
                 });
@@ -612,34 +182,40 @@
                     cItem.className = 'cert-item';
                     cItem.innerHTML = `
                         <div class="cert-title-container">
-                            <span style="font-size:14px; font-weight:500;">${cert.title}</span>
-                            <span style="font-size:12px; color:var(--text-secondary);">${cert.date}</span>
+                            <i class="fa-solid fa-certificate"></i>
+                            <div class="cert-info">
+                                <span style="font-size:14px; font-weight:500;">${cert.title}</span>
+                                <span style="font-size:12px; color:var(--text-secondary);">${cert.date}</span>
+                            </div>
                         </div>
-                        <a href="${cert.link}" target="_blank" class="cert-link-btn">Verify</a>
+                        <a href="${cert.link}" target="_blank" class="cert-link-btn">Verify <i class="fa-solid fa-circle-check"></i></a>
                     `;
                     certsContainer.appendChild(cItem);
                 });
 
-                // Render Theoretical External Playlists
+                // Render Theoretical Framework Channels
                 const ytContainer = document.getElementById('dynamic-yt');
                 data.youtube_courses.forEach(course => {
                     const yItem = document.createElement('div');
                     yItem.className = 'yt-item';
                     yItem.innerHTML = `
                         <div class="yt-title-container">
-                            <span style="font-size:14px; font-weight:500;">${course.title}</span>
+                            <i class="fa-brands fa-youtube"></i>
+                            <div class="yt-info">
+                                <span style="font-size:14px; font-weight:500;">${course.title}</span>
+                            </div>
                         </div>
-                        <a href="${course.link}" target="_blank" class="yt-link-btn">Syllabus</a>
+                        <a href="${course.link}" target="_blank" class="yt-link-btn">Syllabus <i class="fa-solid fa-up-right-from-square"></i></a>
                     `;
                     ytContainer.appendChild(yItem);
                 });
 
             } catch (err) {
-                console.error("Runtime Exception inside Portfolio Pipeline Fetch:", err);
+                console.error("Pipeline compilation breakdown context exception:", err);
             }
         }
 
-        // Cinematic Lightbox Controls
+        // Image View Lightbox Controls
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         
@@ -648,14 +224,10 @@
             lightbox.classList.add('active');
         }
 
-        document.getElementById('lightbox-close').addEventListener('click', () => {
-            lightbox.classList.remove('active');
-        });
-        lightbox.addEventListener('click', (e) => {
-            if(e.target === lightbox) lightbox.classList.remove('active');
-        });
+        document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('active'); });
 
-        // Initialize Architecture Engine
+        // Execute Engine
         runPortfolioPipeline();
     </script>
 </body>
