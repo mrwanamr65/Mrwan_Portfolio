@@ -1,0 +1,153 @@
+{
+  "personal": {
+    "name": "Mrwan Amr Mohamed",
+    "title": "AI & Data Science Student | Grade 11",
+    "summary": "Highly ambitious Grade 11 Scientific-Mathematics student bridging hardware engineering and Artificial Intelligence. Proven track record in elite national and international innovation challenges, demonstrating advanced problem-solving skills and the ability to deploy real-time automation systems.",
+    "links": {
+      "github": "https://github.com/mrwanamr65",
+      "linkedin": "https://linkedin.com/in/your-profile",
+      "whatsapp": "https://wa.me/201019519458",
+      "email": "mailto:mrwanamr.dev@gmail.com"
+    }
+  },
+  "skills": {
+    "ai_deep_learning": {
+      "title": "Deep Learning & AI Foundations",
+      "description": "Advanced understanding of neural network mechanics, specializing in building architectures from scratch and hyperparameter optimization based on intensive research and curriculum paths.",
+      "items": [
+        "Core Architectures: Hands-on implementation of ConvNeXt, EfficientNet, CoAtNet, MobileNet, and Vision Transformers (ViT).",
+        "Deep Learning Mechanics: Multi-head attention mechanisms, patch embedding, feature extraction pipelines, and building neural networks from scratch.",
+        "Frameworks & Libraries: Highly proficient in PyTorch, TensorFlow, Keras, Scikit-learn, and MediaPipe.",
+        "Training Loops: Expert in writing custom training loops, managing batch processing, backpropagation, and loss optimization algorithms (Adam, SGD)."
+      ]
+    },
+    "computer_vision": {
+      "title": "Computer Vision & Real-time Inference",
+      "description": "Processing dynamic visual inputs and deploying state-of-the-art models for real-time tracking, object classification, and spatial awareness.",
+      "items": [
+        "Object Detection: Real-time inference deployment using custom trained YOLO models.",
+        "Live Tracking: Integrating OpenCV pipelines with DeepSort for multi-object tracking and continuous ID logging.",
+        "Data Pipelines: Building custom image preprocessing and advanced data augmentation pipelines using OpenCV."
+      ]
+    },
+    "web_integration": {
+      "title": "Web & Deployment Integration (Foundational)",
+      "description": "Intermediate development capabilities focused primarily on deploying machine learning models and constructing telemetry interfaces.",
+      "items": [
+        "Backend Routing: Creating lightweight, functional RESTful APIs using Flask to serve models.",
+        "Web Security: Foundational input sanitization via Bleach and endpoint rate-limiting using Flask-Limiter.",
+        "Data UI/UX: Constructing responsive, glassmorphic monitoring dashboards utilizing HTML5, CSS3, JavaScript, and Chart.js."
+      ]
+    },
+    "embedded_iot": {
+      "title": "Embedded Systems & IoT Basics",
+      "description": "Interfacing localized physical hardware environments with automation software networks.",
+      "items": [
+        "Microcontrollers: Foundational programming of Arduino and ESP8266 NodeMCU architectures using C/C++.",
+        "Hardware Control: Basic wiring circuits using relays, MOSFETs, and transistors for structural hardware isolation.",
+        "IoT Architecture: Hosting localized web servers directly on microcontrollers to manage hardware-to-web control channels."
+      ]
+    }
+  },
+  "competitions": [
+    {
+      "title": "Intel ISEF - National Finals",
+      "role": "National Finalist",
+      "timeline": "Nov 2025 - Jan 2026",
+      "project": "NeuraEdu",
+      "gradient": "linear-gradient(135deg, #00f2fe 0%, #4facfe 100%)",
+      "description": "Advanced through intense preliminary and local regional fairs to rank among the top 300 projects nationwide out of over 10,000 elite entries. Demonstrated rigorous scientific research methodology, system engineering, and high-tier project defense.",
+      "images": [
+        "images/isef1.jpg",
+        "images/isef2.jpg",
+        "images/isef3.jpg"
+      ]
+    },
+    {
+      "title": "Saudi AI Championship (SCAI)",
+      "role": "National Finalist",
+      "timeline": "May 2025",
+      "project": "Competitive AI Challenge",
+      "gradient": "linear-gradient(135deg, #ffe259 0%, #ffa751 100%)",
+      "description": "Successfully advanced to the national finals, demonstrating competitive expertise in complex AI application design, real-world algorithmic optimization, and international-standard technical pitching under pressure.",
+      "images": [
+        "images/scai1.jpg",
+        "images/scai2.jpg"
+      ]
+    },
+    {
+      "title": "DECI Summer Bootcamp - Cohort 3 Level 2",
+      "role": "1st Place Winner | Best Business Concept",
+      "timeline": "July 2025",
+      "project": "Intensive Innovation Sprint",
+      "gradient": "linear-gradient(135deg, #b92b27 0%, #1565c0 100%)",
+      "description": "Participated in a high-pressure summer bootcamp mentored by Eng. Mohamed Fathi Mousa. Collaborated with an elite cross-functional team under extreme timeline constraints to engineer a product concept, successfully delivering technical implementation and pitching to domain experts.",
+      "images": [
+        "images/deci3_1.jpg",
+        "images/deci3_2.jpg"
+      ]
+    },
+    {
+      "title": "Digitopia Innovation Challenge",
+      "role": "Team Leader",
+      "timeline": "August 2025",
+      "project": "NeuraEdu Prototyping",
+      "gradient": "linear-gradient(135deg, #7117ea 0%, #ea6060 100%)",
+      "description": "Engaged as Team Leader in a month-long intensive innovation program. Led a dedicated cross-functional development team through three systematic validation and engineering stages to refine the technical infrastructure of the NeuraEdu project.",
+      "images": [
+        "images/digitopia1.jpg"
+      ]
+    },
+    {
+      "title": "NASA Space Apps Challenge",
+      "role": "Team Developer",
+      "timeline": "October 2025",
+      "project": "World-Away",
+      "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
+      "description": "Collaborated within a rapid prototyping engineering team during an accelerated 48-hour global hackathon, developing technical solutions for the specialized 'World-Away' challenge criteria under strict time limitations.",
+      "images": [
+        "images/nasa1.jpg",
+        "images/nasa2.jpg"
+      ]
+    },
+    {
+      "title": "DECI Summer Bootcamp - Cohort 2 Level 1",
+      "role": "1st Place Winner | Best Team Award",
+      "timeline": "August 2024",
+      "project": "Integrated Business & Software MVP",
+      "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      "description": "Completed an intensive engineering bootcamp managed by El Mentor and supervised by Dr. Mahmoud Derar. Engineered a functional software application linked directly with a structured business model MVP in an intense 5-day cycle, defending the presentation directly before an expert evaluation jury.",
+      "images": [
+        "images/deci2_1.jpg"
+      ]
+    }
+  ],
+  "certificates": [
+    { "title": "DECI Data Science & AI - Technical Tier Level 3", "date": "Current Enrollment", "link": "#" },
+    { "title": "DECI Data Science & AI Track - Level 2 Completion", "date": "Sept 2025", "link": "#" },
+    { "title": "DECI Coding Challenge Project Winner (Cohort 3 Level 1)", "date": "Jan 2025", "link": "#" },
+    { "title": "Digital Egypt Cubs Initiative (DECI) - Level 1 Completion", "date": "Oct 2024", "link": "#" },
+    { "title": "Elements of AI Certification", "date": "Sept 2024", "link": "#" },
+    { "title": "Data Science & Machine Learning Specialist Certificate (Edraak)", "date": "June 2024", "link": "#" },
+    { "title": "Introduction to Machine Learning Frameworks", "date": "June 2024", "link": "#" },
+    { "title": "Introduction to Python Programming Foundation", "date": "June 2024", "link": "#" }
+  ],
+  "youtube_courses": [
+    { "title": "Machine Learning Comprehensive Track (Eng. Hisham Asem)", "link": "https://www.youtube.com/watch?v=BbuyR2HDn0U&list=PL6-3IRz2XF5UM-FWfQeF1_YhMMa12Eg3s" },
+    { "title": "Deep Learning Foundation Frameworks (Eng. Hisham Asem)", "link": "https://www.youtube.com/watch?v=5_GKIhoXKyI&list=PL6-3IRz2XF5UJE2PbY7UU4SHi7UpV1mXo" },
+    { "title": "Deep Learning with PyTorch (Eng. Hisham Asem)", "link": "https://www.youtube.com/watch?v=e1lAgjFsobc&list=PL6-3IRz2XF5Uq7PkI_PWOm_DLC2CFvSzU" },
+    { "title": "Advanced Artificial Intelligence Ecosystems (Eng. Hisham Asem)", "link": "https://www.youtube.com/watch?v=CyuqDVFYbdE&list=PL6-3IRz2XF5UX-Yi32r925nsgW-3GrnSa" },
+    { "title": "Deep Learning & Machine Learning Practical Track (Codebasics)", "link": "https://www.youtube.com/watch?v=Mubj_fqiAv8&list=PLeo1K3hjS3uu7CxAacxVndI4bE_o3BDtO" },
+    { "title": "Deep Learning Engineering with TensorFlow (freeCodeCamp)", "link": "https://www.youtube.com/watch?v=A83BbHFoKb8" },
+    { "title": "Vision Transformers (ViT) Architecture Deep Dive - Part 1", "link": "https://www.youtube.com/watch?v=aIi5FsdURUA" },
+    { "title": "Vision Transformers (ViT) Mathematical Implementations - Part 2", "link": "https://www.youtube.com/watch?v=DdsVwTodycw" },
+    { "title": "Vision Transformers (ViT) Engineering Deployments - Part 3", "link": "https://www.youtube.com/watch?v=ZRo74xnN2SI" }
+  ],
+  "projects": [
+    {
+      "title": "NeuraEdu Core Platform",
+      "description": "An advanced software solution designed for validation and optimization across structural learning paradigms, presented across major national engineering fairs.",
+      "github_link": "https://github.com/mrwanamr65"
+    }
+  ]
+}
