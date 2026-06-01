@@ -326,34 +326,119 @@ section {
     color: var(--text-secondary);
     font-size: 15px;
 }
+/* === SMART CINEMATIC GALLERY CORE === */
 
-/* Open-Ended Cinematic Gallery */
-.comp-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+/* الحالة الأولى: لو عدد الصور يساوي 2 (عرض مرن بجانب بعض أو فوق بعض) */
+.gallery-dual-images {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap; /* يسمح بنزول الصور تحت بعض لو الشاشة صغيرة */
+}
+
+.gallery-dual-images img {
+    flex: 1 1 calc(50% - 6px); /* يأخذ نصف المساحة بالضبط */
+    min-width: 140px; /* لو الشاشة أصغر من هذا الحجم ينزل تلقائياً ليكون فوق بعض */
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--border-glass);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.gallery-dual-images img:hover {
+    transform: scale(1.03);
+    border-color: var(--border-hover);
+}
+
+/* الحالة الثانية: لو عدد الصور أكبر من 2 (صورة رئيسية وشريط تفاعلي) */
+.gallery-interactive-suite {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
     width: 100%;
 }
 
-.gallery-img-wrapper {
-    aspect-ratio: 4/3;
-    border-radius: 14px;
+.main-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16/10; /* أبعاد سينمائية عريضة للصورة الرئيسية */
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-glass);
-    cursor: pointer;
     position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.2);
 }
 
-.gallery-img-wrapper img {
+.main-gallery-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.main-gallery-img:hover {
+    transform: scale(1.02);
+}
+
+/* شريط الصور المصغرة السفلي */
+.thumbnail-strip {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto; /* يجعل الشريط قابلاً للتمرير الأفقي مهما زاد عدد الصور دون تخريب التصميم */
+    padding-bottom: 6px;
+}
+
+/* تخصيص شريط التمرير الصغير ليكون متناسقاً مع النيون */
+.thumbnail-strip::-webkit-scrollbar {
+    height: 4px;
+}
+.thumbnail-strip::-webkit-scrollbar-thumb {
+    background: var(--border-hover);
+    border-radius: 10px;
+}
+
+.thumb-wrapper {
+    flex: 0 0 75px; /* عرض ثابت لكل صورة مصغرة */
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+    cursor: pointer;
+    background: #000;
     transition: var(--transition-smooth);
 }
 
-.gallery-img-wrapper:hover img {
-    transform: scale(1.1);
+.thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s ease;
+}
+
+.thumb-wrapper:hover, .thumb-wrapper.active-thumb {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+}
+
+/* حالة الصورة الواحدة المفردة */
+.gallery-single-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+}
+.gallery-single-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.gallery-single-img img:hover {
+    transform: scale(1.02);
 }
 
 /* === REPOSITORIES & GITHUB HUB === */

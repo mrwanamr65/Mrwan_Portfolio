@@ -105,6 +105,78 @@
             embedded_iot: 'fa-gears'
         };
 
+        // محرك فحص عدد الصور وتوليد نظام العرض المناسب ديناميكياً لعدم التأثير على الأداء
+        function generateSmartGallery(images, title) {
+            if (!images || images.length === 0) return '';
+            const fallback = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400';
+
+            // حالة صورة واحدة فقط
+            if (images.length === 1) {
+                return `
+                    <div class="gallery-single-img">
+                        <img src="${images[0]}" alt="${title}" onerror="this.src='${fallback}'" onclick="openCinematicView(this.src)">
+                    </div>
+                `;
+            }
+
+            // حالة صورتين بالضبط (عرض مرن ثنائي)
+            if (images.length === 2) {
+                return `
+                    <div class="gallery-dual-images">
+                        <img src="${images[0]}" alt="${title}" onerror="this.src='${fallback}'" onclick="openCinematicView(this.src)">
+                        <img src="${images[1]}" alt="${title}" onerror="this.src='${fallback}'" onclick="openCinematicView(this.src)">
+                    </div>
+                `;
+            }
+
+            // حالة أكثر من صورتين (النظام التفاعلي المتطور: صورة رئيسية وشريط سفلي)
+            const thumbnailsHtml = images.map((img, idx) => `
+                <div class="thumb-wrapper ${idx === 0 ? 'active-thumb' : ''}" onclick="swapGalleryImages(this)">
+                    <img src="${img}" alt="${title}" onerror="this.src='${fallback}'">
+                </div>
+            `).join('');
+
+            return `
+                <div class="gallery-interactive-suite">
+                    <div class="main-image-wrapper">
+                        <img class="main-gallery-img" src="${images[0]}" alt="${title}" onerror="this.src='${fallback}'" onclick="openCinematicView(this.src)">
+                    </div>
+                    <div class="thumbnail-strip">
+                        ${thumbnailsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        // دالة التبديل الاحترافية الخفيفة باستخدام تقنية الـ Swap & Opacity Animation
+        function swapGalleryImages(thumbWrapper) {
+            const suite = thumbWrapper.closest('.gallery-interactive-suite');
+            const mainImg = suite.querySelector('.main-gallery-img');
+            const thumbImg = thumbWrapper.querySelector('img');
+
+            // إذا كانت الصورة المستهدفة معروضة بالفعل، لا تنفذ شيئاً
+            if (mainImg.src === thumbImg.src) return;
+
+            // إخفاء مؤقت سريع وسلس للغاية (200ms) لتفادي أي ثقل متوقع
+            mainImg.style.opacity = '0';
+            thumbImg.style.opacity = '0';
+
+            setTimeout(() => {
+                // تبديل المسارات الذكي للروابط
+                const currentMainSrc = mainImg.src;
+                mainImg.src = thumbImg.src;
+                thumbImg.src = currentMainSrc;
+
+                // تحديث كلاس الإضاءة النشط على الصور المصغرة
+                suite.querySelectorAll('.thumb-wrapper').forEach(t => t.classList.remove('active-thumb'));
+                thumbWrapper.classList.add('active-thumb');
+
+                // إعادة تفعيل الرؤية والظهور فور انتهاء التبديل
+                mainImg.style.opacity = '1';
+                thumbImg.style.opacity = '1';
+            }, 200);
+        }
+
         // Data Injection Core Pipeline Fetch
         async function runPortfolioPipeline() {
             try {
@@ -134,7 +206,7 @@
                     skillsContainer.appendChild(card);
                 });
 
-                // Render Competitions
+                // Render Competitions ด้วยระบบ Smart Gallery ใหม่
                 const compContainer = document.getElementById('dynamic-competitions');
                 data.competitions.forEach(c => {
                     const row = document.createElement('div');
@@ -151,12 +223,8 @@
                             </div>
                             <p class="comp-desc"><strong>Project Tree [${c.project}]:</strong> ${c.description}</p>
                         </div>
-                        <div class="comp-gallery">
-                            ${c.images.map(img => `
-                                <div class="gallery-img-wrapper" onclick="openCinematicView('${img}')">
-                                    <img src="${img}" alt="${c.title}" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400'">
-                                </div>
-                            `).join('')}
+                        <div style="width: 100%;">
+                            ${generateSmartGallery(c.images, c.title)}
                         </div>
                     `;
                     compContainer.appendChild(row);
