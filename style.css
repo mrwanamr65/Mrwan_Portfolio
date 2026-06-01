@@ -332,16 +332,17 @@ section {
 /* === SMART CINEMATIC GALLERY CORE (MODIFIED) === */
 
 /* الحالة الأولى: لو عدد الصور يساوي 2 (عرض مرن بجانب بعض أو فوق بعض) */
+/* الحالة الأولى: لو عدد الصور يساوي 2 (نظام Grid لمنع أي كسر في التصميم) */
 .gallery-dual-images {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* تقسيم المساحة لعمودين بالتساوي تماماً */
     gap: 12px;
     width: 100%;
-    flex-wrap: wrap;
 }
 
 .gallery-dual-images img {
-    flex: 1 1 calc(50% - 6px);
-    min-width: 140px;
+    width: 100%; /* يجبر الصورة على عدم تخطي مساحتها المخصصة */
+    height: auto;
     aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: 14px;
@@ -353,6 +354,13 @@ section {
 .gallery-dual-images img:hover {
     transform: scale(1.03);
     border-color: var(--border-hover);
+}
+
+/* التكيف مع شاشات الموبايل (Responsive Breakpoint) */
+@media (max-width: 600px) {
+    .gallery-dual-images {
+        grid-template-columns: 1fr; /* نزول الصورتين فوق بعض على الموبايل لتوضيح التفاصيل ومنع التشوه */
+    }
 }
 
 /* الحالة الثانية: لو عدد الصور أكبر من 2 (تخصيص كامل لأبعاد الصورة والشريط) */

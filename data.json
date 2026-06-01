@@ -72,20 +72,25 @@
       "gradient": "linear-gradient(135deg, #ffe259 0%, #ffa751 100%)",
       "description": "Successfully advanced to the national finals, demonstrating competitive expertise in complex AI application design, real-world algorithmic optimization, and international-standard technical pitching under pressure.",
       "images": [
-        "images/scai1.jpg",
-        "images/scai2.jpg"
+        "images/scai.png"
       ]
     },
     {
-      "title": "DECI Summer Bootcamp - Cohort 3 Level 2",
-      "role": "1st Place Winner | Best Business Concept",
+      "title": "DECI Summer Bootcamp - Batch 3 Level 2",
+      "role": "1st Place Winner | Best Business Concept |CTO Role",
       "timeline": "July 2025",
-      "project": "Intensive Innovation Sprint",
+      "project": "NeuraEdu",
       "gradient": "linear-gradient(135deg, #b92b27 0%, #1565c0 100%)",
       "description": "Participated in a high-pressure summer bootcamp mentored by Eng. Mohamed Fathi Mousa. Collaborated with an elite cross-functional team under extreme timeline constraints to engineer a product concept, successfully delivering technical implementation and pitching to domain experts.",
       "images": [
-        "images/deci3_1.jpg",
-        "images/deci3_2.jpg"
+        "images/DECIL2_1.jpg",
+        "images/DECIL2_2.jpg",
+        "images/DECIL2_3.jpg",
+        "images/DECIL2_4.jpg",
+        "images/DECIL2_5.jpg",
+        "images/DECIL2_6.jpg",
+        "images/DECIL2_7.jpg"
+
       ]
     },
     {
@@ -96,7 +101,9 @@
       "gradient": "linear-gradient(135deg, #7117ea 0%, #ea6060 100%)",
       "description": "Engaged as Team Leader in a month-long intensive innovation program. Led a dedicated cross-functional development team through three systematic validation and engineering stages to refine the technical infrastructure of the NeuraEdu project.",
       "images": [
-        "images/digitopia1.jpg"
+        "images/digitopia1.jpg",
+        "images/digitopia2.jpg",
+        "images/digitopia3.jpg"
       ]
     },
     {
@@ -107,19 +114,19 @@
       "gradient": "linear-gradient(135deg, #141e30 0%, #243b55 100%)",
       "description": "Collaborated within a rapid prototyping engineering team during an accelerated 48-hour global hackathon, developing technical solutions for the specialized 'World-Away' challenge criteria under strict time limitations.",
       "images": [
-        "images/nasa1.jpg",
-        "images/nasa2.jpg"
-      ]
+        "images/nasa1.jpg"
+        ]
     },
     {
-      "title": "DECI Summer Bootcamp - Cohort 2 Level 1",
-      "role": "1st Place Winner | Best Team Award",
+      "title": "DECI Summer Bootcamp - Batch 2 Level 1",
+      "role": "1st Place Winner | Best Team Award | Team Lead Role",
       "timeline": "August 2024",
       "project": "Integrated Business & Software MVP",
       "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
       "description": "Completed an intensive engineering bootcamp managed by El Mentor and supervised by Dr. Mahmoud Derar. Engineered a functional software application linked directly with a structured business model MVP in an intense 5-day cycle, defending the presentation directly before an expert evaluation jury.",
       "images": [
-        "images/deci2_1.jpg"
+        "images/decil2_1.jpg",
+        "images/decil2_2.jpg"
       ]
     }
   ],
