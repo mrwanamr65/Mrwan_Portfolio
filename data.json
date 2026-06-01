@@ -102,8 +102,9 @@
       "description": "Engaged as Team Leader in a month-long intensive innovation program. Led a dedicated cross-functional development team through three systematic validation and engineering stages to refine the technical infrastructure of the NeuraEdu project.",
       "images": [
         "images/digitopia1.jpg",
-        "images/digitopia2.jpg",
-        "images/digitopia3.jpg"
+        "images/digitopia2.jpeg",
+        "images/digitopia3.jpeg",
+        "images/digitopia1.jpeg"
       ]
     },
     {
@@ -125,8 +126,8 @@
       "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
       "description": "Completed an intensive engineering bootcamp managed by El Mentor and supervised by Dr. Mahmoud Derar. Engineered a functional software application linked directly with a structured business model MVP in an intense 5-day cycle, defending the presentation directly before an expert evaluation jury.",
       "images": [
-        "images/decil2_1.jpg",
-        "images/decil2_2.jpg"
+        "images/decil1_1.jpg",
+        "images/decil1_2.jpg"
       ]
     }
   ],
