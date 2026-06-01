@@ -329,16 +329,19 @@ section {
 /* === SMART CINEMATIC GALLERY CORE === */
 
 /* الحالة الأولى: لو عدد الصور يساوي 2 (عرض مرن بجانب بعض أو فوق بعض) */
+/* === SMART CINEMATIC GALLERY CORE (MODIFIED) === */
+
+/* الحالة الأولى: لو عدد الصور يساوي 2 (عرض مرن بجانب بعض أو فوق بعض) */
 .gallery-dual-images {
     display: flex;
     gap: 12px;
     width: 100%;
-    flex-wrap: wrap; /* يسمح بنزول الصور تحت بعض لو الشاشة صغيرة */
+    flex-wrap: wrap;
 }
 
 .gallery-dual-images img {
-    flex: 1 1 calc(50% - 6px); /* يأخذ نصف المساحة بالضبط */
-    min-width: 140px; /* لو الشاشة أصغر من هذا الحجم ينزل تلقائياً ليكون فوق بعض */
+    flex: 1 1 calc(50% - 6px);
+    min-width: 140px;
     aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: 14px;
@@ -352,7 +355,7 @@ section {
     border-color: var(--border-hover);
 }
 
-/* الحالة الثانية: لو عدد الصور أكبر من 2 (صورة رئيسية وشريط تفاعلي) */
+/* الحالة الثانية: لو عدد الصور أكبر من 2 (تخصيص كامل لأبعاد الصورة والشريط) */
 .gallery-interactive-suite {
     display: flex;
     flex-direction: column;
@@ -360,47 +363,42 @@ section {
     width: 100%;
 }
 
+/* صندوق الصورة الكبيرة: يتكيف تلقائياً مع أبعاد الصورة بالكامل */
 .main-image-wrapper {
     width: 100%;
-    aspect-ratio: 16/10; /* أبعاد سينمائية عريضة للصورة الرئيسية */
+    height: auto; /* تم إزالة الـ aspect-ratio الثابت ليتكيف مع أبعاد الصورة */
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-glass);
     position: relative;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .main-gallery-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* تجعل الصورة تظهر بالكامل وبأبعادها الحقيقية بدون أي قص */
+    display: block;
+    object-fit: contain;
     cursor: pointer;
     transition: opacity 0.2s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-gallery-img:hover {
-    transform: scale(1.02);
+    transform: scale(1.01); /* حركة خفيفة جداً ومريحة للعين */
 }
 
-/* شريط الصور المصغرة السفلي */
+/* شريط الصور المصغرة السفلي: يملأ المساحة بالكامل ويقسمها بالتساوي */
 .thumbnail-strip {
     display: flex;
+    width: 100%; /* يأخذ العرض الكامل للمربع */
     gap: 8px;
-    overflow-x: auto; /* يجعل الشريط قابلاً للتمرير الأفقي مهما زاد عدد الصور دون تخريب التصميم */
-    padding-bottom: 6px;
+    padding-bottom: 4px;
 }
 
-/* تخصيص شريط التمرير الصغير ليكون متناسقاً مع النيون */
-.thumbnail-strip::-webkit-scrollbar {
-    height: 4px;
-}
-.thumbnail-strip::-webkit-scrollbar-thumb {
-    background: var(--border-hover);
-    border-radius: 10px;
-}
-
+/* الصور المصغرة: تتقسم مساحتها ديناميكياً على عدد الصور بدون ترك أي فراغ */
 .thumb-wrapper {
-    flex: 0 0 75px; /* عرض ثابت لكل صورة مصغرة */
+    flex: 1; /* السحر هنا: يقسم العرض المتاح على عدد العناصر بالتساوي تماماً */
+    min-width: 0; /* تمنع انكسار المظهر في الشاشات الصغيرة */
     aspect-ratio: 4/3;
     border-radius: 8px;
     overflow: hidden;
@@ -425,20 +423,20 @@ section {
 /* حالة الصورة الواحدة المفردة */
 .gallery-single-img {
     width: 100%;
-    aspect-ratio: 16/10;
+    height: auto;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-glass);
 }
 .gallery-single-img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     cursor: pointer;
     transition: var(--transition-smooth);
 }
 .gallery-single-img img:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 /* === REPOSITORIES & GITHUB HUB === */
