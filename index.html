@@ -232,7 +232,8 @@
                 // Render Validated Certifications (Visual Layout)
                 const certsContainer = document.getElementById('dynamic-certs-visual');
                 // رابط صورة افتراضية في حالة عدم توفر مسار صورة للشهادة في ملف الجيسون
-                const fallbackCertImg = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400';
+                // استخدام صورة وهمية بسيطة لا تعتمد على سيرفرات خارجية
+                const fallbackCertImg = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" style="background:%23111827"><text x="50%" y="50%" fill="%234b5563" font-family="sans-serif" font-size="16" text-anchor="middle" dy=".3em">No Image Provided</text></svg>';
                 
                 data.certificates.forEach(cert => {
                     const cItem = document.createElement('div');
