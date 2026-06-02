@@ -677,3 +677,51 @@ section {
     .certs-visual-grid { grid-template-columns: 1fr; }
     .yt-list { grid-template-columns: 1fr; }
 }
+
+/* === FOOTER & SOCIAL CONNECTORS === */
+footer {
+    padding: 80px 8% 40px;
+    background: linear-gradient(to bottom, transparent, rgba(6, 182, 212, 0.03));
+    text-align: center;
+    border-top: 1px solid var(--border-glass);
+}
+
+.footer-content h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+}
+
+.social-links a:hover {
+    color: #fff;
+    background: var(--neon-cyan);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.copyright {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
