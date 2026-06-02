@@ -1,59 +1,92 @@
 import os
+import fitz  # مكتبة PyMuPDF للتعامل مع الـ PDF
 from PIL import Image
 
-def optimize_images(input_folder, output_folder, max_width=1200, quality=75):
+def process_and_optimize(input_folder, output_folder, max_width=1200, quality=75):
     """
-    دالة لتصغير وضغط الصور لتناسب الويب.
-    max_width: أقصى عرض للصورة (لو أكبر من كده هتتصغر مع الحفاظ على الأبعاد).
-    quality: جودة الصورة بعد الضغط (من 1 لـ 100، 75 رقم ممتاز للويب).
+    دالة لتحويل ملفات PDF إلى صور، وضغط الصور العادية لتناسب الويب.
     """
-    
-    # لو فولدر الصور الجديدة مش موجود، الكود هيعمله
+    # إنشاء فولدر المخرجات لو مش موجود
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # الصيغ اللي الكود هيتعامل معاها
-    valid_extensions = ('.jpg', '.jpeg', '.png', '.webp')
+    valid_image_extensions = ('.jpg', '.jpeg', '.png', '.webp')
 
-    # نعدي على كل الملفات اللي في الفولدر
     for filename in os.listdir(input_folder):
-        ext = os.path.splitext(filename)[1].lower()
-        
-        # نتأكد إن الملف عبارة عن صورة
-        if ext in valid_extensions:
-            input_path = os.path.join(input_folder, filename)
-            output_path = os.path.join(output_folder, filename)
+        filepath = os.path.join(input_folder, filename)
+        # فصل اسم الملف عن الصيغة
+        name, ext = os.path.splitext(filename)
+        ext = ext.lower()
 
+        # ==========================================
+        # لو الملف PDF
+        # ==========================================
+        if ext == '.pdf':
             try:
-                # نفتح الصورة
-                img = Image.open(input_path)
+                # نفتح ملف الـ PDF
+                doc = fitz.open(filepath)
+                
+                # نعدي على كل صفحة في الـ PDF
+                for page_num in range(len(doc)):
+                    page = doc.load_page(page_num)
+                    # تحويل الصفحة لصورة بـ DPI 150 (ممتاز جداً للويب)
+                    pix = page.get_pixmap(dpi=150)
+                    
+                    # تحويل بيانات الصورة لمكتبة Pillow عشان نضغطها
+                    mode = "RGBA" if pix.alpha else "RGB"
+                    img = Image.frombytes(mode, [pix.width, pix.height], pix.samples)
+                    
+                    # تحديد اسم الصورة الجديدة (اسم الملف الأصلي + رقم الصفحة)
+                    output_name = f"{name}_page_{page_num + 1}.jpg"
+                    output_path = os.path.join(output_folder, output_name)
+                    
+                    # ضغط وحفظ الصورة
+                    optimize_pil_image(img, output_path, max_width, quality)
+                    
+                print(f"✅ تم تحويل وضغط الـ PDF: {filename}")
+                
+            except Exception as e:
+                print(f"❌ حصلت مشكلة في ملف {filename}: {e}")
 
-                # لو عرض الصورة أكبر من العرض المسموح، نصغرها
-                if img.width > max_width:
-                    ratio = max_width / img.width
-                    new_height = int(img.height * ratio)
-                    img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
-
-                # لو الصورة PNG شفافة وعايزين نحولها لـ JPG علشان نقلل الحجم اكتر
-                if img.mode in ("RGBA", "P") and ext in ('.jpg', '.jpeg'):
-                    img = img.convert("RGB")
-
-                # نحفظ الصورة بالإعدادات الجديدة
-                img.save(output_path, quality=quality, optimize=True)
-                print(f"✅ تم ضغط وحفظ: {filename}")
-
+        # ==========================================
+        # لو الملف صورة عادية
+        # ==========================================
+        elif ext in valid_image_extensions:
+            try:
+                img = Image.open(filepath)
+                output_path = os.path.join(output_folder, f"{name}.jpg")
+                
+                # ضغط وحفظ الصورة
+                optimize_pil_image(img, output_path, max_width, quality)
+                print(f"✅ تم ضغط الصورة: {filename}")
+                
             except Exception as e:
                 print(f"❌ حصلت مشكلة في صورة {filename}: {e}")
 
+def optimize_pil_image(img, output_path, max_width, quality):
+    """دالة مساعدة لتصغير الأبعاد وتقليل الحجم"""
+    # لو عرض الصورة أكبر من العرض المسموح، نصغرها
+    if img.width > max_width:
+        ratio = max_width / img.width
+        new_height = int(img.height * ratio)
+        img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
+
+    # تحويل الصورة لـ RGB علشان تدعم صيغة JPG (لو كانت PNG شفافة)
+    if img.mode in ("RGBA", "P"):
+        img = img.convert("RGB")
+
+    # حفظ الصورة بأفضل إعدادات ضغط للويب
+    img.save(output_path, "JPEG", quality=quality, optimize=True)
+
 # ==========================================
-# طريقة الاستخدام:
+# طريقة الاستخدام
 # ==========================================
 
-# حط هنا مسار الفولدر اللي فيه الصور الأصلية
-folder_in = "images2" 
+# حط هنا مسار الفولدر اللي فيه الملفات الأصلية (صور أو PDF)
+folder_in = "D:\\Python_env\\images2\\New folder" 
 
-# حط هنا مسار الفولدر اللي هتتحفظ فيه الصور بعد الضغط
+# حط هنا مسار الفولدر اللي هتتحفظ فيه الصور الجاهزة للويب
 folder_out = "images" 
 
 # تشغيل الكود
-optimize_images(folder_in, folder_out)
+process_and_optimize(folder_in, folder_out)

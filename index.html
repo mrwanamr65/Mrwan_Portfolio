@@ -6,9 +6,7 @@
     <title>Mrwan Amr Mohamed | AI Portfolio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -65,17 +63,16 @@
     </section>
 
     <section id="education">
-        <div class="education-grid">
-            <div>
-                <h2 class="section-title" style="font-size: 26px;"><i class="fa-solid fa-award"></i> Validated Certs</h2>
-                <p class="section-subtitle" style="margin-bottom: 30px;">Direct validation parameters and verified institutional completion timelines.</p>
-                <div class="cert-list" id="dynamic-certs"></div>
-            </div>
-            <div>
-                <h2 class="section-title" style="font-size: 26px;"><i class="fa-solid fa-book-open"></i> Theoretical Tracks</h2>
-                <p class="section-subtitle" style="margin-bottom: 30px;">Comprehensive external engineering syllabus and conceptual research deep dives without standalone certificates.</p>
-                <div class="yt-list" id="dynamic-yt"></div>
-            </div>
+        <!-- الجزء الأول: الشهادات الموثقة (Visual Grid Layout) -->
+        <h2 class="section-title"><i class="fa-solid fa-award"></i> Validated Certifications</h2>
+        <p class="section-subtitle">Institutional verified credentials and technical completions.</p>
+        <div class="certs-visual-grid" id="dynamic-certs-visual"></div>
+
+        <!-- الجزء الثاني: الكورسات والمسارات التعليمية (YouTube Links) -->
+        <div style="margin-top: 80px;">
+            <h2 class="section-title"><i class="fa-brands fa-youtube" style="color: #ef4444;"></i> Theoretical & Research Tracks</h2>
+            <p class="section-subtitle">Engineering syllabus and conceptual research deep dives.</p>
+            <div class="yt-list" id="dynamic-yt"></div>
         </div>
     </section>
 
@@ -87,7 +84,7 @@
     <script>
         // Smooth Cursor Ambient Light Core Engine
         document.addEventListener('mousemove', e => {
-            document.querySelectorAll('.skill-card, .comp-row, .github-hero-card, .project-card').forEach(card => {
+            document.querySelectorAll('.skill-card, .comp-row, .github-hero-card, .project-card, .cert-card-visual').forEach(card => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -105,12 +102,10 @@
             embedded_iot: 'fa-gears'
         };
 
-        // محرك فحص عدد الصور وتوليد نظام العرض المناسب ديناميكياً لعدم التأثير على الأداء
         function generateSmartGallery(images, title) {
             if (!images || images.length === 0) return '';
             const fallback = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400';
 
-            // حالة صورة واحدة فقط
             if (images.length === 1) {
                 return `
                     <div class="gallery-single-img">
@@ -119,7 +114,6 @@
                 `;
             }
 
-            // حالة صورتين بالضبط (عرض مرن ثنائي)
             if (images.length === 2) {
                 return `
                     <div class="gallery-dual-images">
@@ -129,7 +123,6 @@
                 `;
             }
 
-            // حالة أكثر من صورتين (النظام التفاعلي المتطور: صورة رئيسية وشريط سفلي)
             const thumbnailsHtml = images.map((img, idx) => `
                 <div class="thumb-wrapper ${idx === 0 ? 'active-thumb' : ''}" onclick="swapGalleryImages(this)">
                     <img src="${img}" alt="${title}" onerror="this.src='${fallback}'">
@@ -148,36 +141,29 @@
             `;
         }
 
-        // دالة التبديل الاحترافية الخفيفة باستخدام تقنية الـ Swap & Opacity Animation
         function swapGalleryImages(thumbWrapper) {
             const suite = thumbWrapper.closest('.gallery-interactive-suite');
             const mainImg = suite.querySelector('.main-gallery-img');
             const thumbImg = thumbWrapper.querySelector('img');
 
-            // إذا كانت الصورة المستهدفة معروضة بالفعل، لا تنفذ شيئاً
             if (mainImg.src === thumbImg.src) return;
 
-            // إخفاء مؤقت سريع وسلس للغاية (200ms) لتفادي أي ثقل متوقع
             mainImg.style.opacity = '0';
             thumbImg.style.opacity = '0';
 
             setTimeout(() => {
-                // تبديل المسارات الذكي للروابط
                 const currentMainSrc = mainImg.src;
                 mainImg.src = thumbImg.src;
                 thumbImg.src = currentMainSrc;
 
-                // تحديث كلاس الإضاءة النشط على الصور المصغرة
                 suite.querySelectorAll('.thumb-wrapper').forEach(t => t.classList.remove('active-thumb'));
                 thumbWrapper.classList.add('active-thumb');
 
-                // إعادة تفعيل الرؤية والظهور فور انتهاء التبديل
                 mainImg.style.opacity = '1';
                 thumbImg.style.opacity = '1';
             }, 200);
         }
 
-        // Data Injection Core Pipeline Fetch
         async function runPortfolioPipeline() {
             try {
                 const response = await fetch('data.json');
@@ -206,7 +192,7 @@
                     skillsContainer.appendChild(card);
                 });
 
-                // Render Competitions ด้วยระบบ Smart Gallery ใหม่
+                // Render Competitions
                 const compContainer = document.getElementById('dynamic-competitions');
                 data.competitions.forEach(c => {
                     const row = document.createElement('div');
@@ -243,25 +229,26 @@
                     projectsContainer.appendChild(pCard);
                 });
 
-                // Render Validated Certifications
-                const certsContainer = document.getElementById('dynamic-certs');
+                // Render Validated Certifications (Visual Layout)
+                const certsContainer = document.getElementById('dynamic-certs-visual');
+                // رابط صورة افتراضية في حالة عدم توفر مسار صورة للشهادة في ملف الجيسون
+                const fallbackCertImg = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=400';
+                
                 data.certificates.forEach(cert => {
                     const cItem = document.createElement('div');
-                    cItem.className = 'cert-item';
+                    cItem.className = 'cert-card-visual';
                     cItem.innerHTML = `
-                        <div class="cert-title-container">
-                            <i class="fa-solid fa-certificate"></i>
-                            <div class="cert-info">
-                                <span style="font-size:14px; font-weight:500;">${cert.title}</span>
-                                <span style="font-size:12px; color:var(--text-secondary);">${cert.date}</span>
-                            </div>
+                        <img src="${cert.image || fallbackCertImg}" alt="${cert.title}" onerror="this.src='${fallbackCertImg}'" onclick="openCinematicView(this.src)">
+                        <div class="cert-info">
+                            <h4>${cert.title}</h4>
+                            <span><i class="fa-solid fa-calendar-days"></i> ${cert.date}</span>
                         </div>
-                        <a href="${cert.link}" target="_blank" class="cert-link-btn">Verify <i class="fa-solid fa-circle-check"></i></a>
+                        <a href="${cert.link}" target="_blank" class="cert-link-btn">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     `;
                     certsContainer.appendChild(cItem);
                 });
 
-                // Render Theoretical Framework Channels
+                // Render Theoretical Framework Channels (YouTube)
                 const ytContainer = document.getElementById('dynamic-yt');
                 data.youtube_courses.forEach(course => {
                     const yItem = document.createElement('div');
@@ -273,7 +260,7 @@
                                 <span style="font-size:14px; font-weight:500;">${course.title}</span>
                             </div>
                         </div>
-                        <a href="${course.link}" target="_blank" class="yt-link-btn">Syllabus <i class="fa-solid fa-up-right-from-square"></i></a>
+                        <a href="${course.link}" target="_blank" class="yt-link-btn">Access Syllabus <i class="fa-solid fa-up-right-from-square"></i></a>
                     `;
                     ytContainer.appendChild(yItem);
                 });

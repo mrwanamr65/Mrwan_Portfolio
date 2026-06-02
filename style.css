@@ -326,22 +326,17 @@ section {
     color: var(--text-secondary);
     font-size: 15px;
 }
+
 /* === SMART CINEMATIC GALLERY CORE === */
-
-/* الحالة الأولى: لو عدد الصور يساوي 2 (عرض مرن بجانب بعض أو فوق بعض) */
-/* === SMART CINEMATIC GALLERY CORE (MODIFIED) === */
-
-/* الحالة الأولى: لو عدد الصور يساوي 2 (عرض مرن بجانب بعض أو فوق بعض) */
-/* الحالة الأولى: لو عدد الصور يساوي 2 (نظام Grid لمنع أي كسر في التصميم) */
 .gallery-dual-images {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* تقسيم المساحة لعمودين بالتساوي تماماً */
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     width: 100%;
 }
 
 .gallery-dual-images img {
-    width: 100%; /* يجبر الصورة على عدم تخطي مساحتها المخصصة */
+    width: 100%;
     height: auto;
     aspect-ratio: 4/3;
     object-fit: cover;
@@ -356,14 +351,12 @@ section {
     border-color: var(--border-hover);
 }
 
-/* التكيف مع شاشات الموبايل (Responsive Breakpoint) */
 @media (max-width: 600px) {
     .gallery-dual-images {
-        grid-template-columns: 1fr; /* نزول الصورتين فوق بعض على الموبايل لتوضيح التفاصيل ومنع التشوه */
+        grid-template-columns: 1fr;
     }
 }
 
-/* الحالة الثانية: لو عدد الصور أكبر من 2 (تخصيص كامل لأبعاد الصورة والشريط) */
 .gallery-interactive-suite {
     display: flex;
     flex-direction: column;
@@ -371,10 +364,9 @@ section {
     width: 100%;
 }
 
-/* صندوق الصورة الكبيرة: يتكيف تلقائياً مع أبعاد الصورة بالكامل */
 .main-image-wrapper {
     width: 100%;
-    height: auto; /* تم إزالة الـ aspect-ratio الثابت ليتكيف مع أبعاد الصورة */
+    height: auto;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-glass);
@@ -384,7 +376,7 @@ section {
 
 .main-gallery-img {
     width: 100%;
-    height: auto; /* تجعل الصورة تظهر بالكامل وبأبعادها الحقيقية بدون أي قص */
+    height: auto;
     display: block;
     object-fit: contain;
     cursor: pointer;
@@ -392,21 +384,19 @@ section {
 }
 
 .main-gallery-img:hover {
-    transform: scale(1.01); /* حركة خفيفة جداً ومريحة للعين */
+    transform: scale(1.01);
 }
 
-/* شريط الصور المصغرة السفلي: يملأ المساحة بالكامل ويقسمها بالتساوي */
 .thumbnail-strip {
     display: flex;
-    width: 100%; /* يأخذ العرض الكامل للمربع */
+    width: 100%;
     gap: 8px;
     padding-bottom: 4px;
 }
 
-/* الصور المصغرة: تتقسم مساحتها ديناميكياً على عدد الصور بدون ترك أي فراغ */
 .thumb-wrapper {
-    flex: 1; /* السحر هنا: يقسم العرض المتاح على عدد العناصر بالتساوي تماماً */
-    min-width: 0; /* تمنع انكسار المظهر في الشاشات الصغيرة */
+    flex: 1;
+    min-width: 0;
     aspect-ratio: 4/3;
     border-radius: 8px;
     overflow: hidden;
@@ -428,7 +418,6 @@ section {
     box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
 }
 
-/* حالة الصورة الواحدة المفردة */
 .gallery-single-img {
     width: 100%;
     height: auto;
@@ -502,20 +491,73 @@ section {
     color: var(--neon-cyan);
 }
 
-/* === ACADEMIC & CERTIFICATION LABS === */
-.education-grid {
+/* === NEW VISUAL CERTIFICATIONS GRID === */
+.certs-visual-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
-.cert-list, .yt-list {
+.cert-card-visual {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 20px;
+    transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: relative;
+    overflow: hidden;
 }
 
-.cert-item, .yt-item {
+.cert-card-visual:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.08);
+}
+
+.cert-card-visual img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid var(--border-glass);
+    transition: var(--transition-smooth);
+}
+
+.cert-card-visual img:hover {
+    filter: brightness(1.1);
+}
+
+.cert-info {
+    flex-grow: 1; /* Makes sure the title area pushes the button to the bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cert-info h4 {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.cert-info span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* === YOUTUBE TRACKS GRID === */
+.yt-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 15px;
+}
+
+.yt-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -526,29 +568,24 @@ section {
     transition: var(--transition-smooth);
 }
 
-.cert-item:hover, .yt-item:hover {
-    background: rgba(6, 182, 212, 0.02);
-    border-color: var(--border-hover);
+.yt-item:hover {
+    background: rgba(239, 68, 68, 0.03); /* YouTube subtle red hover */
+    border-color: #ef4444;
     transform: translateX(5px);
 }
 
-.cert-title-container, .yt-title-container {
+.yt-title-container {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.cert-title-container i {
-    font-size: 22px;
-    color: var(--neon-purple);
-}
-
 .yt-title-container i {
-    font-size: 22px;
-    color: #ef4444; /* YouTube Red Accent */
+    font-size: 24px;
+    color: #ef4444; 
 }
 
-.cert-info, .yt-info {
+.yt-info {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -563,11 +600,21 @@ section {
     align-items: center;
     gap: 6px;
     transition: var(--transition-smooth);
+    margin-top: auto;
 }
 
-.cert-link-btn:hover, .yt-link-btn:hover {
+.yt-link-btn {
+    color: var(--text-secondary);
+}
+
+.cert-link-btn:hover {
     color: #fff;
     text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.yt-link-btn:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #ef4444;
 }
 
 /* === LIGHTBOX MODAL OVERLAY === */
@@ -616,7 +663,7 @@ section {
 
 /* === SYSTEM RESPONSIVE LIGHT OVERRIDES === */
 @media (max-width: 992px) {
-    .comp-row, .education-grid {
+    .comp-row {
         grid-template-columns: 1fr;
     }
 }
@@ -627,4 +674,6 @@ section {
     #hero h1 { font-size: 44px; }
     section { padding: 120px 5% 60px; }
     .skills-grid { grid-template-columns: 1fr; }
+    .certs-visual-grid { grid-template-columns: 1fr; }
+    .yt-list { grid-template-columns: 1fr; }
 }
