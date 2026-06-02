@@ -231,15 +231,17 @@
 
                 // Render Validated Certifications (Visual Layout)
                 const certsContainer = document.getElementById('dynamic-certs-visual');
-                // رابط صورة افتراضية في حالة عدم توفر مسار صورة للشهادة في ملف الجيسون
-                // استخدام صورة وهمية بسيطة لا تعتمد على سيرفرات خارجية
-                const fallbackCertImg = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" style="background:%23111827"><text x="50%" y="50%" fill="%234b5563" font-family="sans-serif" font-size="16" text-anchor="middle" dy=".3em">No Image Provided</text></svg>';
+                
+                // استخدمت لك صورة (SVG) مدمجة في الكود نفسه عشان متعتمدش على أي سيرفر خارجي والموقع ميهنجش أبداً
+                const fallbackCertImg = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" style="background:%23111827"><text x="50%" y="50%" fill="%234b5563" font-family="sans-serif" font-size="16" text-anchor="middle" dy=".3em">Credential Image Pending</text></svg>';
                 
                 data.certificates.forEach(cert => {
                     const cItem = document.createElement('div');
                     cItem.className = 'cert-card-visual';
+                    
+                    // السر هنا في (this.onerror=null) بتمنع اللوب اللانهائي لو الصورة فيها مشكلة
                     cItem.innerHTML = `
-                        <img src="${cert.image || fallbackCertImg}" alt="${cert.title}" onerror="this.src='${fallbackCertImg}'" onclick="openCinematicView(this.src)">
+                        <img src="${cert.image || fallbackCertImg}" alt="${cert.title}" onerror="this.onerror=null; this.src='${fallbackCertImg}';" onclick="openCinematicView(this.src)">
                         <div class="cert-info">
                             <h4>${cert.title}</h4>
                             <span><i class="fa-solid fa-calendar-days"></i> ${cert.date}</span>
