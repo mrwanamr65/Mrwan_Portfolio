@@ -18,7 +18,7 @@
             <a href="https://github.com/mrwanamr65" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.instagram.com/mrwan_.amr/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/profile.php?id=100086223607822" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="mailto:mrwanamr.dev@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" onclick="copyEmail(event, 'mrwanamr.dev@gmail.com')" title="Click to copy or send email"><i class="fa-solid fa-envelope"></i></a>
             <a href="https://discord.com/users/mrwan_amr22" target="_blank"><i class="fa-brands fa-discord"></i></a>
             <a href="https://drive.google.com/file/d/1HvZtMxt2memnWJC3U62ns-nmF0f5cGxJ/view?usp=drive_link" target="_blank" title="Download CV"><i class="fa-solid fa-file-pdf"></i></a>
         </div>
@@ -303,6 +303,17 @@
 
         // Execute Engine
         runPortfolioPipeline();
-    </script>
+        // دالة لنسخ الإيميل أو فتح تطبيق البريد
+        function copyEmail(e, email) {
+            e.preventDefault();
+            // محاولة نسخ الإيميل
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email copied to clipboard: " + email);
+            }).catch(() => {
+                // إذا فشل النسخ، نفتح تطبيق الإيميل
+                window.location.href = "mailto:" + email;
+            });
+        }
+        </script>
 </body>
 </html>
