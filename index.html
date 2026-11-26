@@ -3,118 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mrwan Amr Mohamed | AI Portfolio</title>
-    <meta name="description" content="Mrwan Amr Mohamed, AI & data science student building computer vision and embedded systems. Competitions, projects and certificates.">
-    <meta name="theme-color" content="#050806">
-    <meta property="og:title" content="Mrwan Amr Mohamed | AI Portfolio">
-    <meta property="og:description" content="AI, computer vision and embedded systems. Competitions, projects and certificates.">
+    <title>Mrwan Amr Mohamed | AI &amp; Embedded Systems</title>
+    <meta name="description" content="Mrwan Amr Mohamed. AI and embedded systems student, Intel ISEF national finalist. Projects, competitions and certificates.">
+    <meta name="theme-color" content="#EAE9E2">
+    <meta property="og:title" content="Mrwan Amr Mohamed | AI &amp; Embedded Systems">
+    <meta property="og:description" content="Computer vision, machine learning and embedded systems. Projects, competitions and certificates.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="progress" id="progress" aria-hidden="true"></div>
-    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+    <a class="skip" href="#main">Skip to content</a>
 
-    <header class="topbar">
-        <a class="logo" href="#hero" aria-label="Mrwan Amr, home"><span class="logo-chip"></span>MRWAN<b>.AI</b></a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav"><i class="fa-solid fa-bars"></i></button>
-        <nav id="site-nav" aria-label="Main">
-            <a href="#hero"><span>00</span>Boot</a>
-            <a href="#competitions"><span>01</span>Missions</a>
-            <a href="#projects"><span>02</span>Builds</a>
-            <a href="#skills"><span>03</span>Stack</a>
-            <a href="#education"><span>04</span>Certs</a>
-            <a href="#contact"><span>05</span>Ping</a>
+    <header class="top">
+        <a class="mark" href="#top" aria-label="Mrwan Amr, top">M.A.</a>
+        <nav aria-label="Main">
+            <a href="#builds">Builds</a>
+            <a href="#record">Competitions</a>
+            <a href="#stack">Capabilities</a>
+            <a href="#archive">Archive</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main id="main">
-        <section id="hero">
-            <canvas id="net" aria-hidden="true"></canvas>
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <p class="boot" id="hero-badge-title">&gt; AI &amp; Data Science Student</p>
-                    <h1 id="hero-name" aria-label="Mrwan Amr Mohamed">Mrwan Amr Mohamed</h1>
-                    <p class="role-line"><span class="prompt">$</span> <span id="typed"></span><span class="caret"></span></p>
-                    <p class="lead" id="hero-summary"></p>
-                    <div class="btn-group">
-                        <a href="#competitions" class="btn btn-primary"><i class="fa-solid fa-play"></i> Run missions</a>
-                        <a href="#contact" class="btn btn-ghost">Open channel</a>
-                    </div>
-                </div>
-                <aside class="hud" aria-label="Live training visual">
-                    <div class="hud-bar"><i></i><i></i><i></i><span>train.py</span><em id="epoch">epoch 001</em></div>
-                    <canvas id="loss" width="520" height="260" aria-hidden="true"></canvas>
-                    <ul class="hud-rows" id="hud-rows"></ul>
-                </aside>
+        <section id="top" class="hero">
+            <div class="rail"><span class="num">00</span><span class="rev">REV 2026.11</span></div>
+            <div class="hero-body">
+                <p class="mono kicker" id="hero-title">AI &amp; Data Science Student</p>
+                <h1 class="plate" aria-label="Mrwan Amr Mohamed"><span>Mrwan</span><span>Amr</span><span>Mohamed</span></h1>
+                <p class="statement" id="hero-summary"></p>
+                <p class="hero-links"><a href="#builds" class="ulink">See the builds</a><a href="#contact" class="ulink">Contact</a></p>
             </div>
-            <ul class="stats" id="stats" aria-label="Highlights"></ul>
-            <a class="scroll-hint" href="#competitions" aria-label="Scroll to missions"><i class="fa-solid fa-chevron-down"></i></a>
+            <figure class="fig hero-fig" id="hero-fig"></figure>
+            <ul class="spec-row" id="stats" aria-label="Summary"></ul>
         </section>
 
-        <section id="competitions" class="block">
-            <div class="block-head"><span class="tag">/01</span><h2>Missions</h2><p>Competitions and hackathons. Drag or scroll sideways, newest first.</p></div>
-            <div class="rail-wrap">
-                <div class="rail" id="dynamic-competitions" tabindex="0" aria-label="Competitions, scroll horizontally"></div>
-                <div class="rail-ctrl">
-                    <button type="button" id="rail-prev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
-                    <div class="rail-bar"><i id="rail-fill"></i></div>
-                    <button type="button" id="rail-next" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
-                </div>
+        <section id="builds" class="sec">
+            <div class="rail"><span class="num">01</span><span class="rev">BUILDS</span></div>
+            <div class="sec-body">
+                <h2>Builds</h2>
+                <p class="sec-note mono">Source code on GitHub.</p>
+                <ol class="builds" id="dynamic-projects"></ol>
+                <p class="after"><a id="main-github-btn" class="ulink" href="#" target="_blank" rel="noopener noreferrer">All repositories</a></p>
             </div>
         </section>
 
-        <section id="projects" class="block">
-            <div class="block-head"><span class="tag">/02</span><h2>Builds</h2><p>Things that run. Source on GitHub.</p></div>
-            <div class="projects-grid" id="dynamic-projects"></div>
-            <a id="main-github-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost all-repos"><i class="fa-brands fa-github"></i> All repositories</a>
-        </section>
-
-        <section id="skills" class="block">
-            <div class="block-head"><span class="tag">/03</span><h2>Stack</h2><p>Pick a chip to read what is on it.</p></div>
-            <div class="board">
-                <div class="chips-col" id="skill-tabs" role="tablist" aria-label="Skill areas"></div>
-                <div class="traces" aria-hidden="true"><svg viewBox="0 0 120 400" preserveAspectRatio="none"><path d="M0 50 H60 V200 H120"/><path d="M0 150 H40 V200 H120"/><path d="M0 250 H40 V200 H120"/><path d="M0 350 H60 V200 H120"/></svg></div>
-                <div class="skill-panel" id="skill-panel" role="tabpanel" aria-live="polite"></div>
+        <section id="record" class="sec">
+            <div class="rail"><span class="num">02</span><span class="rev">COMPETITIONS</span></div>
+            <div class="sec-body">
+                <h2>Competitions</h2>
+                <p class="sec-note mono">Newest first. Click any photo to enlarge.</p>
+                <div id="dynamic-competitions"></div>
             </div>
         </section>
 
-        <section id="education" class="block">
-            <div class="block-head"><span class="tag">/04</span><h2>Certs</h2><p>Verified credentials and completed programs.</p></div>
-            <div class="certs-visual-grid" id="dynamic-certs-visual"></div>
-            <button type="button" class="btn btn-ghost" id="certs-more" hidden>Show all</button>
-            <div class="sub-head"><h3><i class="fa-brands fa-youtube"></i> Learning tracks</h3></div>
-            <div class="yt-list" id="dynamic-yt"></div>
+        <section id="stack" class="sec">
+            <div class="rail"><span class="num">03</span><span class="rev">CAPABILITIES</span></div>
+            <div class="sec-body">
+                <h2>Capabilities</h2>
+                <div class="caps" id="skills-grid"></div>
+            </div>
+        </section>
+
+        <section id="archive" class="sec">
+            <div class="rail"><span class="num">04</span><span class="rev">ARCHIVE</span></div>
+            <div class="sec-body">
+                <h2>Archive</h2>
+                <p class="sec-note mono" id="archive-count"></p>
+                <div id="dynamic-certs"></div>
+                <h3 class="sub">Learning tracks</h3>
+                <ul class="tracks" id="dynamic-yt"></ul>
+            </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <div class="footer-card">
-            <p class="boot">&gt; ping mrwan --open-channel</p>
-            <h2>Let's build the next thing.</h2>
-            <p class="muted-lg">Technical challenges, research and competitions. Reply time: fast.</p>
-            <div class="social-links">
-                <a aria-label="LinkedIn" href="https://www.linkedin.com/in/mrwan-amr-8451a6348/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                <a aria-label="GitHub" href="https://github.com/mrwanamr65" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                <a aria-label="Instagram" href="https://www.instagram.com/mrwan_.amr/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                <a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=100086223607822" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
-                <a aria-label="Copy email address" href="mailto:mrwanamr.dev@gmail.com" onclick="copyEmail(event, 'mrwanamr.dev@gmail.com')" title="Click to copy email"><i class="fa-solid fa-envelope"></i></a>
-                <a aria-label="Discord" href="https://discord.com/users/mrwan_amr22" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
-                <a aria-label="Download CV" href="https://drive.google.com/file/d/1HvZtMxt2memnWJC3U62ns-nmF0f5cGxJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" title="Download CV"><i class="fa-solid fa-file-pdf"></i></a>
-            </div>
+    <footer id="contact" class="sec foot">
+        <div class="rail"><span class="num">05</span><span class="rev">CONTACT</span></div>
+        <div class="sec-body">
+            <h2>Contact</h2>
+            <p class="statement">Technical challenges, research and competitions.</p>
+            <ul class="contact">
+                <li><span class="mono">Email</span><a href="mailto:mrwanamr.dev@gmail.com" id="email-link">mrwanamr.dev@gmail.com</a></li>
+                <li><span class="mono">GitHub</span><a href="https://github.com/mrwanamr65" target="_blank" rel="noopener noreferrer">mrwanamr65</a></li>
+                <li><span class="mono">LinkedIn</span><a href="https://www.linkedin.com/in/mrwan-amr-8451a6348/" target="_blank" rel="noopener noreferrer">mrwan-amr</a></li>
+                <li><span class="mono">Instagram</span><a href="https://www.instagram.com/mrwan_.amr/" target="_blank" rel="noopener noreferrer">@mrwan_.amr</a></li>
+                <li><span class="mono">Facebook</span><a href="https://www.facebook.com/profile.php?id=100086223607822" target="_blank" rel="noopener noreferrer">Profile</a></li>
+                <li><span class="mono">Discord</span><a href="https://discord.com/users/mrwan_amr22" target="_blank" rel="noopener noreferrer">mrwan_amr22</a></li>
+                <li><span class="mono">CV</span><a href="https://drive.google.com/file/d/1HvZtMxt2memnWJC3U62ns-nmF0f5cGxJ/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Download (PDF)</a></li>
+            </ul>
+            <p class="copyright mono">&copy; 2026 Mrwan Amr Mohamed</p>
         </div>
-        <p class="copyright">© 2026 Mrwan Amr · built with sensors, not just pixels</p>
     </footer>
 
-    <div class="lightbox-modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-        <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">&times;</button>
-        <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged preview">
-    </div>
+    <dialog id="viewer" aria-label="Image viewer">
+        <figure>
+            <img id="viewer-img" alt="">
+            <figcaption><span id="viewer-cap"></span><span class="mono" id="viewer-pos"></span></figcaption>
+        </figure>
+        <button type="button" class="v-btn v-prev" id="v-prev" aria-label="Previous image">&larr;</button>
+        <button type="button" class="v-btn v-next" id="v-next" aria-label="Next image">&rarr;</button>
+        <button type="button" class="v-btn v-close" id="v-close" aria-label="Close">Close</button>
+    </dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="app.js"></script>
 </body>
